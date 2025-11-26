@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cineminha dia 03/12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #ffe6f2;
+            overflow: hidden; 
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        
+        #buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+            position: relative;
+        }
+
+    
+        .btnContainer {
+            position: relative;
+            width: 120px;
+            height: 60px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #yesBtn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Yasmin, você quer ir no cinema comigo dia 03/12?</h1>
+
+    <div id="buttons">
+        <div class="btnContainer">
+            <button id="yesBtn" onclick="alert('Te amo momo!')">Sim</button>
+        </div>
+
+        <div class="btnContainer">
+            <button id="noBtn">Não</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", () => {
+
+            const btnWidth = noBtn.offsetWidth;
+            const btnHeight = noBtn.offsetHeight;
+
+           
+            const maxX = window.innerWidth - btnWidth - 20;
+            const maxY = window.innerHeight - btnHeight - 20;
+
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+
+            noBtn.style.position = "fixed"; 
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+    </script>
+
+</body>
+</html>
